@@ -22,7 +22,7 @@ remote_state {
     if_exists = "overwrite_terragrunt"
   }
   config = {
-    bucket         = get_env("TF_VAR_s3_bucket", "production-tfstate")
+    bucket         = get_env("TF_VAR_s3_bucket", "operations-tfstate-teby2plr")
     key            = "${local.account_id}/${path_relative_to_include()}/terraform.tfstate"
     region         = local.aws_region
     encrypt        = true
