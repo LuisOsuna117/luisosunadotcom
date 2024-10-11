@@ -7,16 +7,18 @@ include {
 }
 
 locals {
-  s3_bucket_name = "luisosunadotcom"
+  global_variables = read_terragrunt_config(find_in_parent_folders("global_variables.hcl"))
 
-  tags = { 
-    "iac-path" = "${path_relative_to_include()}", 
-    "Name" : local.s3_bucket_name 
+  product = local.global_variables.locals.product
+
+  tags = {
+    "iac-path" = "${path_relative_to_include()}",
+    "Name" : local.product
   }
 }
 
 inputs = {
-  bucket = local.s3_bucket_name
+  bucket = local.product
 
   tags = local.tags
 }
