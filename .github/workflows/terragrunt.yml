@@ -14,7 +14,10 @@ jobs:
 
     # Define environment variables for AWS and Terragrunt
     env:
-      AWS_REGION: us-east-1
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_REGION: ${{ vars.AWS_REGION }}
+      TF_VAR_account_id: ${{ vars.TF_VAR_account_id }}  # Assuming this is a secret
       TF_LOG: TRACE  # Optional, for detailed Terraform logs
       TERRAGRUNT_DOWNLOAD: /tmp/terragrunt
 
@@ -23,24 +26,24 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    # Step 2: Set up Terraform and Terragrunt
+    # Step 2: Set up Terraform
     - name: Install Terraform
       uses: hashicorp/setup-terraform@v2
       with:
         terraform_version: 1.5.6  # Specify your Terraform version
-
-    - name: Install Terragrunt
-      run: |
-        curl -L https://github.com/gruntwork-io/terragrunt/releases/download/v0.48.0/terragrunt_linux_amd64 -o /usr/local/bin/terragrunt
-        chmod +x /usr/local/bin/terragrunt
-
-    # Step 3: Configure AWS credentials using GitHub secrets
-    - name: Configure AWS credentials
-      uses: aws-actions/configure-aws-credentials@v2
+    
+    - name: 'Configure AWS credentials'
+      uses: aws-actions/configure-aws-credentials@v4
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ env.AWS_REGION }}
+
+    # Step 3: Install Terragrunt
+    - name: Install Terragrunt
+      run: |
+        curl -L https://github.com/gruntwork-io/terragrunt/releases/download/v0.50.2/terragrunt_linux_amd64 -o /usr/local/bin/terragrunt
+        chmod +x /usr/local/bin/terragrunt
 
     # Step 4: Initialize Terragrunt and run the deployment
     - name: Terragrunt Init
@@ -48,7 +51,3 @@ jobs:
 
     - name: Terragrunt Plan
       run: terragrunt plan --terragrunt-non-interactive --terragrunt-working-dir terraform/live
-
-    - name: Terragrunt Apply
-      if: github.event_name == 'push'
-      run: terragrunt apply --terragrunt-non-interactive --terragrunt-working-dir terraform/live
