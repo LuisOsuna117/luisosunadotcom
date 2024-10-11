@@ -18,7 +18,7 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       AWS_REGION: ${{ vars.AWS_REGION }}
       TF_VAR_account_id: ${{ vars.TF_VAR_account_id }}  # Assuming this is a secret
-      TF_LOG: TRACE  # Optional, for detailed Terraform logs
+      TF_LOG: INFO  # Optional, for detailed Terraform logs
       TERRAGRUNT_DOWNLOAD: /tmp/terragrunt
 
     steps:
