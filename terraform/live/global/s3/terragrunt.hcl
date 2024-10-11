@@ -9,14 +9,11 @@ include {
 locals {
   s3_bucket_name = "luisdotcom"
 
-  tags = { "iac-path" = "${path_relative_to_include()}", "Name" : local.s3_bucket_name },
+  tags = { "iac-path" = "${path_relative_to_include()}", "Name" : local.s3_bucket_name }
 }
 
 inputs = {
-  bucket_name   = local.s3_bucket_name
+  bucket_name = local.s3_bucket_name
 
-  tags = merge(
-    local.tags,
-    { Name : local.s3_bucket_name }
-  )
+  tags = local.tags
 }

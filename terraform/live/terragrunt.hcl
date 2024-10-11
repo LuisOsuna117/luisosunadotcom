@@ -2,9 +2,9 @@ terraform_version_constraint  = ">= 1.5.6"
 terragrunt_version_constraint = ">= 0.50.2"
 
 locals {
-  aws_region   = get_env("TF_VAR_region", "us-east-1")
-  account_id   = get_env("TF_VAR_account_id")
-  role_arn     = "arn:aws:iam::${local.account_id}:role/cicd_deployer"
+  aws_region = get_env("TF_VAR_region", "us-east-1")
+  account_id = get_env("TF_VAR_account_id")
+  role_arn   = "arn:aws:iam::${local.account_id}:role/cicd_deployer"
 }
 
 # Merge local values (adjust inputs based on requirements)
