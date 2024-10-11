@@ -7,7 +7,7 @@ include {
 }
 
 locals {
-  s3_bucket_name = "luisdotcom"
+  s3_bucket_name = "luisosunadotcom"
 
   tags = { "iac-path" = "${path_relative_to_include()}", "Name" : local.s3_bucket_name }
 }
