@@ -50,4 +50,4 @@ jobs:
       run: terragrunt init --terragrunt-non-interactive --terragrunt-working-dir terraform/live
 
     - name: Terragrunt Plan
-      run: terragrunt plan --terragrunt-non-interactive --terragrunt-working-dir terraform/live
+      run: terragrunt run-all plan --terragrunt-non-interactive --terragrunt-working-dir terraform/live
