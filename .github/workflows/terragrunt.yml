@@ -53,8 +53,6 @@ jobs:
         chmod +x /usr/local/bin/terragrunt
 
     # Step 4: Initialize Terragrunt and run plan
-    - name: Terragrunt Init
-      run: terragrunt init --terragrunt-non-interactive --terragrunt-working-dir terraform/live
 
     - name: Terragrunt Plan
       run: terragrunt run-all plan --terragrunt-non-interactive --terragrunt-working-dir terraform/live
