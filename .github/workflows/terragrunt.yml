@@ -9,6 +9,38 @@ on:
       - main
 
 jobs:
+  lint-and-security-check:
+    name: Run TFLint and TFSec
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.5.6
+
+      - name: Install TFLint
+        run: |
+          curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
+          tflint --version
+
+      - name: Install TFSec
+        run: |
+          curl -s https://raw.githubusercontent.com/aquasecurity/tfsec/master/scripts/install_linux.sh | bash
+          tfsec --version
+
+      - name: Run TFLint
+        run: |
+          cd terraform/live
+          tflint
+
+      - name: Run TFSec
+        run: |
+          cd terraform/live
+          tfsec .
+ 
   terragrunt-plan:
     runs-on: ubuntu-latest
 
