@@ -21,7 +21,7 @@ locals {
 
   product     = local.global_variables.locals.product
   domain_name = "luisosuna.com"
-  
+
   tags = {
     "iac-path" = path_relative_to_include()
     "Name"     = local.product
@@ -36,10 +36,6 @@ inputs = {
 
   domain_name = local.domain_name
   zone_id     = dependency.route53-zone.outputs.route53_zone_zone_id
-
-  subject_alternative_names = [
-    "*.${local.domain_name}"
-  ]
 
   validation_method = "DNS"
 
