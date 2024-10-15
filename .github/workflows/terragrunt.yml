@@ -51,6 +51,7 @@ jobs:
       AWS_REGION: ${{ vars.AWS_REGION }}
       TF_VAR_account_id: ${{ vars.TF_VAR_account_id }}  # Assuming this is a secret
       TERRAGRUNT_DOWNLOAD: /tmp/terragrunt
+      TF_LOG: DEBUG
 
     steps:
     # Step 1: Checkout the repository
