@@ -13,7 +13,7 @@ locals {
 
   tags = {
     "iac-path" = "${path_relative_to_include()}",
-    "Name" : local.product
+    "Name" = local.product
   }
 }
 
