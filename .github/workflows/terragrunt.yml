@@ -51,7 +51,6 @@ jobs:
       AWS_REGION: ${{ vars.AWS_REGION }}
       TF_VAR_account_id: ${{ vars.TF_VAR_account_id }}  # Assuming this is a secret
       TERRAGRUNT_DOWNLOAD: /tmp/terragrunt
-      TF_LOG: DEBUG
 
     steps:
     # Step 1: Checkout the repository
@@ -88,7 +87,7 @@ jobs:
     # Step 4: Initialize Terragrunt and run plan
 
     - name: Terragrunt Plan
-      run: terragrunt run-all plan --terragrunt-non-interactive --terragrunt-working-dir terraform/live
+      run: terragrunt run-all plan --terragrunt-non-interactive --terragrunt-log-level debug --terragrunt-debug --terragrunt-working-dir terraform/live
 
   terragrunt-deploy:
     runs-on: ubuntu-latest
