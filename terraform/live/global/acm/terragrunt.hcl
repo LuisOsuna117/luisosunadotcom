@@ -12,7 +12,7 @@ dependency route53-zone {
   mock_outputs = {
     route53_zone_zone_id = "Z123456789EXAMPLE"
   }
-  mock_outputs_merge_strategy_with_state  = "shallow"
+  
   mock_outputs_allowed_terraform_commands = ["validate", "plan", "providers", "init"]
 }
 
