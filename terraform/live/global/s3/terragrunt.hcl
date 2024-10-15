@@ -12,8 +12,8 @@ locals {
   product = local.global_variables.locals.product
 
   tags = {
-    "iac-path" = "${path_relative_to_include()}",
-    "Name" = local.product
+    "iac-path" = path_relative_to_include()
+    "Name"     = local.product
   }
 }
 
