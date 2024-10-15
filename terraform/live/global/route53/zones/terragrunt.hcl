@@ -12,17 +12,17 @@ locals {
   product     = local.global_variables.locals.product
   domain_name = "luisosuna.com"
   tags = {
-    "iac-path" = "${path_relative_to_include()}",
-    "Name" = local.product
+    "iac-path" = path_relative_to_include(),
+    "Name"     = local.product
   }
 }
 
 inputs = {
   zones = {
     "luisosuna.com" = {
-      comment = "${local.domain_name} (production)"
+      comment = "${local.domain_name} (production)" # Still using interpolation since it's part of a larger string.
       tags = {
-        Name = "${local.domain_name}"
+        Name = local.domain_name
       }
     }
   }
