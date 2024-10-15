@@ -30,7 +30,7 @@ locals {
 
 inputs = {
   providers = {
-    aws.acm = aws,
+    aws.acm = aws
     aws.dns = aws
   }
 
