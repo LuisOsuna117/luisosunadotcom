@@ -23,3 +23,11 @@ The portfolio is live at [luisosuna.com](https://luisosuna.com).
 ├── package.json            # Project dependencies and scripts
 └── README.md               # Project documentation
 ```
+
+## License
+
+This project is licensed under the Apache License 2.0 - see the [LICENSE](./LICENSE) file for details.
+
+## Contact
+
+Feel free to reach out to me at contact@luisosuna.com or connect with me on [LinkedIn](https://www.linkedin.com/in/luisosuna117).
