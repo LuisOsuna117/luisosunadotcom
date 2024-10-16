@@ -1,5 +1,5 @@
 terraform {
-  source = "../../../../modules/s3-policy"
+  source = "../../../..//modules/s3-policy"
 }
 
 include {

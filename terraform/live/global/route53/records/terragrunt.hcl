@@ -10,7 +10,7 @@ dependency "cloudfront" {
   config_path = "${path_relative_from_include()}/live/global/cloudfront"
 
   mock_outputs = {
-    cloudfront_distribution_domain_name = "d3m454zexample.cloudfront.net",
+    cloudfront_distribution_domain_name    = "d3m454zexample.cloudfront.net",
     cloudfront_distribution_hosted_zone_id = "Z2FD4NDEXAMPLE"
   }
 
@@ -45,6 +45,7 @@ inputs = {
   zone_id = dependency.route53-zone.outputs.route53_zone_zone_id["luisosuna.com"]
   records = [
     {
+      name = ""
       type = "A"
       alias = {
         name    = dependency.cloudfront.outputs.cloudfront_distribution_domain_name
