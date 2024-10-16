@@ -7,7 +7,7 @@ include {
 }
 
 dependency "s3-bucket" {
-  config_path = "${path_relative_from_include()}/live/global/s3"
+  config_path = "../s3"
 
   mock_outputs = {
     domain_name = "mock-bucket.s3.amazonaws.com"
