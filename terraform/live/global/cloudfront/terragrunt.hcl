@@ -12,7 +12,7 @@ dependency s3-bucket {
   mock_outputs = {
     domain_name = "mock-bucket.s3.amazonaws.com"
   }
-  
+
   mock_outputs_allowed_terraform_commands = ["validate", "plan", "providers", "init"]
 }
 
@@ -22,7 +22,7 @@ dependency acm {
   mock_outputs = {
     acm_certificate_arn = "arn:aws:acm:us-west-2:123456789012:certificate/abc12345-6789-0123-abcd-1234567890ab"
   }
-  
+
   mock_outputs_allowed_terraform_commands = ["validate", "plan", "providers", "init"]
 }
 

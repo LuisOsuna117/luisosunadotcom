@@ -11,7 +11,7 @@ locals {
 
   product     = local.global_variables.locals.product
   domain_name = "luisosuna.com"
-  
+
   tags = {
     "iac-path" = path_relative_to_include()
     "Name"     = local.product

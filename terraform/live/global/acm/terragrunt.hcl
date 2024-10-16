@@ -12,7 +12,7 @@ dependency route53-zone {
   mock_outputs = {
     route53_zone_zone_id = "Z123456789EXAMPLE"
   }
-  
+
   mock_outputs_allowed_terraform_commands = ["validate", "plan", "providers", "init"]
 }
 
@@ -32,11 +32,9 @@ inputs = {
   domain_name = local.domain_name
   zone_id     = dependency.route53-zone.outputs.route53_zone_zone_id
 
-  subject_alternative_names  = ["*.${local.domain_name}"]
+  subject_alternative_names = ["*.${local.domain_name}"]
 
   validation_method = "DNS"
 
-  tags = {
-    Name = local.domain_name
-  }
+  tags = local.tags
 }
