@@ -6,7 +6,7 @@ include {
   path = find_in_parent_folders()
 }
 
-dependency s3-bucket {
+dependency "s3-bucket" {
   config_path = "${path_relative_from_include()}/live/global/s3"
 
   mock_outputs = {
