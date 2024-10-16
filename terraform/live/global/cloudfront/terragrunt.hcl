@@ -42,6 +42,8 @@ inputs = {
   aliases     = ["${local.domain_name}"]
   price_class = "PriceClass_100"
 
+  default_root_object = "index.html"
+
   create_origin_access_control = true
 
   origin_access_control = {
