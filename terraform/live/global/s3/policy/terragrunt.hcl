@@ -1,9 +1,19 @@
 terraform {
-  source = "git::git@github.com:terraform-aws-modules/terraform-aws-s3-bucket.git//?ref=v4.2.0"
+  source = "../../../../modules/s3-policy"
 }
 
 include {
   path = find_in_parent_folders()
+}
+
+dependency "s3-bucket" {
+  config_path = "${path_relative_from_include()}/live/global/s3"
+
+  mock_outputs = {
+    s3_bucket_id = "mock-bucket"
+  }
+
+  mock_outputs_allowed_terraform_commands = ["validate", "plan", "providers", "init"]
 }
 
 dependency "cloudfront" {
@@ -28,7 +38,6 @@ locals {
 }
 
 inputs = {
-  bucket = local.product
-
-  tags = local.tags
+  bucket                      = dependency.s3-bucket.outputs.s3_bucket_id
+  cloudfront_distribution_arn = dependency.cloudfront.outputs.cloudfront_distribution_arn
 }
