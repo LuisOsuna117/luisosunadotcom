@@ -6,16 +6,6 @@ include {
   path = find_in_parent_folders()
 }
 
-dependency route53-zone {
-  config_path = "${path_relative_from_include()}/live/global/route53/zones"
-
-  mock_outputs = {
-    route53_zone_zone_id = "Z123456789EXAMPLE"
-  }
-
-  mock_outputs_allowed_terraform_commands = ["validate", "plan", "providers", "init"]
-}
-
 locals {
   global_variables = read_terragrunt_config(find_in_parent_folders("global_variables.hcl"))
 
@@ -30,7 +20,7 @@ locals {
 
 inputs = {
   domain_name = local.domain_name
-  zone_id     = dependency.route53-zone.outputs.route53_zone_zone_id
+  zone_id     = "Z0678736OILCV25F1T2N"
 
   subject_alternative_names = ["*.${local.domain_name}"]
 
