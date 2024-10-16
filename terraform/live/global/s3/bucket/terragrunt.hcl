@@ -6,16 +6,6 @@ include {
   path = find_in_parent_folders()
 }
 
-dependency "cloudfront" {
-  config_path = "${path_relative_from_include()}/live/global/cloudfront"
-
-  mock_outputs = {
-    cloudfront_distribution_arn = "arn:aws:cloudfront::123456789012:distribution/E1AGE6REXAMPLE"
-  }
-
-  mock_outputs_allowed_terraform_commands = ["validate", "plan", "providers", "init"]
-}
-
 locals {
   global_variables = read_terragrunt_config(find_in_parent_folders("global_variables.hcl"))
 
