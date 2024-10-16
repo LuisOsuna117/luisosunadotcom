@@ -16,15 +16,15 @@ dependency s3-bucket {
   mock_outputs_allowed_terraform_commands = ["validate", "plan", "providers", "init"]
 }
 
-dependency acm {
-  config_path = "${path_relative_from_include()}/live/global/acm"
+// dependency acm {
+//   config_path = "${path_relative_from_include()}/live/global/acm"
 
-  mock_outputs = {
-    acm_certificate_arn = "arn:aws:acm:us-west-2:123456789012:certificate/abc12345-6789-0123-abcd-1234567890ab"
-  }
+//   mock_outputs = {
+//     acm_certificate_arn = "arn:aws:acm:us-west-2:123456789012:certificate/abc12345-6789-0123-abcd-1234567890ab"
+//   }
 
-  mock_outputs_allowed_terraform_commands = ["validate", "plan", "providers", "init"]
-}
+//   mock_outputs_allowed_terraform_commands = ["validate", "plan", "providers", "init"]
+// }
 
 locals {
   global_variables = read_terragrunt_config(find_in_parent_folders("global_variables.hcl"))
@@ -39,7 +39,7 @@ locals {
 }
 
 inputs = {
-  aliases     = ["${local.domain_name}"]
+  // aliases     = ["${local.domain_name}"]
   price_class = "PriceClass_100"
 
   create_origin_access_control = true
@@ -70,10 +70,10 @@ inputs = {
 
   }
 
-  viewer_certificate = {
-    acm_certificate_arn = dependency.acm.outputs.acm_certificate_arn
-    ssl_support_method  = "sni-only"
-  }
+  // viewer_certificate = {
+  //   acm_certificate_arn = dependency.acm.outputs.acm_certificate_arn
+  //   ssl_support_method  = "sni-only"
+  // }
 
   tags = local.tags
 }
