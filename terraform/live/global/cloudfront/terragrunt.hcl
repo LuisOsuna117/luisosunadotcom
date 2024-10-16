@@ -10,7 +10,7 @@ dependency "s3-bucket" {
   config_path = "${path_relative_from_include()}/live/global/s3/bucket"
 
   mock_outputs = {
-    domain_name = "mock-bucket.s3.amazonaws.com"
+    s3_bucket_bucket_domain_name = "mock-bucket.s3.amazonaws.com"
   }
 
   mock_outputs_allowed_terraform_commands = ["validate", "plan", "providers", "init"]
