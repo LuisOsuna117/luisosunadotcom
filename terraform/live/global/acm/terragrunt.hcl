@@ -29,13 +29,10 @@ locals {
 }
 
 inputs = {
-  providers = {
-    aws.acm = aws
-    aws.dns = aws
-  }
-
   domain_name = local.domain_name
   zone_id     = dependency.route53-zone.outputs.route53_zone_zone_id
+
+  subject_alternative_names  = ["*.${local.domain_name}"]
 
   validation_method = "DNS"
 
