@@ -10,7 +10,7 @@ dependency "s3-bucket" {
   config_path = "${path_relative_from_include()}/live/global/s3/bucket"
 
   mock_outputs = {
-    s3_bucket_bucket_domain_name = "mock-bucket.s3.amazonaws.com"
+    s3_bucket_bucket_regional_domain_name = "mock-bucket.s3.us-east-1.amazonaws.com"
   }
 
   mock_outputs_allowed_terraform_commands = ["validate", "plan", "providers", "init"]
@@ -57,7 +57,7 @@ inputs = {
 
   origin = {
     s3 = {
-      domain_name           = dependency.s3-bucket.outputs.s3_bucket_bucket_domain_name
+      domain_name           = dependency.s3-bucket.outputs.s3_bucket_bucket_regional_domain_name
       origin_access_control = "s3_oac"
     }
   }
