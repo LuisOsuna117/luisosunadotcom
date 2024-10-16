@@ -87,7 +87,7 @@ jobs:
     # Step 4: Initialize Terragrunt and run plan
 
     - name: Terragrunt Plan
-      run: terragrunt run-all plan --terragrunt-non-interactive --terragrunt-working-dir terraform/live
+      run: terragrunt run-all plan --terragrunt-non-interactive --terragrunt-working-dir terraform/live/global/acm
 
   terragrunt-deploy:
     runs-on: ubuntu-latest
@@ -134,4 +134,4 @@ jobs:
 
     # Step 4: Initialize Terragrunt and run plan
     - name: Terragrunt apply
-      run: terragrunt run-all apply --terragrunt-non-interactive --terragrunt-working-dir terraform/live
+      run: terragrunt run-all apply --terragrunt-non-interactive --terragrunt-working-dir terraform/live/global/acm
