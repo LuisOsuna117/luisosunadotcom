@@ -45,7 +45,6 @@ inputs = {
   zone_id = dependency.route53-zone.outputs.route53_zone_zone_id["luisosuna.com"]
   records = [
     {
-      name = "cloudfront"
       type = "A"
       alias = {
         name    = dependency.cloudfront.outputs.cloudfront_distribution_domain_name
