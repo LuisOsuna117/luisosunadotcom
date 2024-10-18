@@ -1,4 +1,8 @@
 # Luis Osuna's Portfolio
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=LuisOsuna117_luisosunadotcom&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=LuisOsuna117_luisosunadotcom)
+[![Known Vulnerabilities](https://snyk.io/test/github/LuisOsuna117/luisosunadotcom/badge.svg)](https://snyk.io/test/github/LuisOsuna117/luisosunadotcom)
+
+
 
 Welcome to the repository for my personal portfolio website! The project showcases my skills, projects, and experience as a Cloud Engineer. It is built using **Create React App (CRA)** and hosted on **AWS**. Infrastructure as Code (IaC) is managed with **Terragrunt**.
 
