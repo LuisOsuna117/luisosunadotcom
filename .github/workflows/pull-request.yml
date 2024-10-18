@@ -9,6 +9,7 @@ env:
   tf_version: 1.5.6
   tg_version: 0.50.2
   working_dir: terraform/live
+  TF_PLUGIN_CACHE_DIR: ${{ github.workspace }}/.terraform.d/plugin-cache
 
 jobs:
   lint-and-security-check:
@@ -69,17 +70,21 @@ jobs:
       run: mkdir -p .terraform.d/plugin-cache
       
     - name: Terraform Plugin Cache
-      uses: actions/cache@v4.0.1
+      uses: actions/cache@v4
       with:
-        path: .terraform.d/plugin-cache
+        path: ${{ env.TF_PLUGIN_CACHE_DIR }}
         key: ${{ runner.os }}-terraform-plugin-cache-${{ hashFiles('**/.terraform.lock.hcl') }}
 
-    - name: Plan
-      uses: gruntwork-io/terragrunt-action@v2
-      env:
-          TF_PLUGIN_CACHE_DIR: .terraform.d/plugin-cache
+    - name: Install Terraform
+      uses: hashicorp/setup-terraform@v3
       with:
-        tf_version: ${{ env.tf_version }}
-        tg_version: ${{ env.tg_version }}
-        tg_dir: ${{ env.working_dir }}
-        tg_command: run-all plan
+        terraform_version: 1.5.6  # Specify your Terraform version
+        terraform_wrapper: false
+
+    - name: Install Terragrunt
+      run: |
+        curl -L https://github.com/gruntwork-io/terragrunt/releases/download/v0.50.2/terragrunt_linux_amd64 -o /usr/local/bin/terragrunt
+        chmod +x /usr/local/bin/terragrunt
+
+    - name: Terragrunt Plan
+      run: terragrunt run-all plan --terragrunt-non-interactive --terragrunt-working-dir ${{ env.working_dir }}
