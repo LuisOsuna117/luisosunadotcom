@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0](https://github.com/LuisOsuna117/luisosunadotcom/compare/v1.0.1...v1.1.0) (2024-10-20)
+
+
+### Features
+
+* **react:** New react app folder structure ([#13](https://github.com/LuisOsuna117/luisosunadotcom/issues/13)) ([c93a581](https://github.com/LuisOsuna117/luisosunadotcom/commit/c93a58125b662c6f02e752fd3e213fe1dad7d568))
+
 ## [1.0.1](https://github.com/LuisOsuna117/luisosunadotcom/compare/v1.0.0...v1.0.1) (2024-10-20)
 
 
