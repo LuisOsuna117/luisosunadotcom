@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.1](https://github.com/LuisOsuna117/luisosunadotcom/compare/v1.1.0...v1.1.1) (2024-10-20)
+
+
+### Bug Fixes
+
+* **deploy:** fixing tag pattern ([#14](https://github.com/LuisOsuna117/luisosunadotcom/issues/14)) ([ac85f18](https://github.com/LuisOsuna117/luisosunadotcom/commit/ac85f182ccda443090017b0eafba3c4f3fb15ace))
+
 ## [1.1.0](https://github.com/LuisOsuna117/luisosunadotcom/compare/v1.0.1...v1.1.0) (2024-10-20)
 
 
