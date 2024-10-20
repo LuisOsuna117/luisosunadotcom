@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.2](https://github.com/LuisOsuna117/luisosunadotcom/compare/v1.1.1...v1.1.2) (2024-10-20)
+
+
+### Bug Fixes
+
+* **deploy:** changing deploy event trigger ([#15](https://github.com/LuisOsuna117/luisosunadotcom/issues/15)) ([04b297d](https://github.com/LuisOsuna117/luisosunadotcom/commit/04b297d28d613623056d46042f8a7b4e8cf7005a))
+
 ## [1.1.1](https://github.com/LuisOsuna117/luisosunadotcom/compare/v1.1.0...v1.1.1) (2024-10-20)
 
 
