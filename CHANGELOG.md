@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.3](https://github.com/LuisOsuna117/luisosunadotcom/compare/v1.1.2...v1.1.3) (2024-10-20)
+
+
+### Bug Fixes
+
+* **deploy:** env variables ([#16](https://github.com/LuisOsuna117/luisosunadotcom/issues/16)) ([1650fbf](https://github.com/LuisOsuna117/luisosunadotcom/commit/1650fbf46732d7b84201fa6e5ac9b010bb679484))
+
 ## [1.1.2](https://github.com/LuisOsuna117/luisosunadotcom/compare/v1.1.1...v1.1.2) (2024-10-20)
 
 
