@@ -17,11 +17,17 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
 
-      - name: Set up GPG
+      - name: Import GPG key
         run: |
-          echo "${{ secrets.GPG_PRIVATE_KEY }}" | base64 --decode | gpg --import
+          echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --batch --import
+        
+      - name: Configure Git to sign commits
+        run: |
+          git config --global user.email ${{ secrets.SIGNING_EMAIL }} # Set your email here
+          git config --global user.name "Luis Osuna"  # Set your name here
           git config --global user.signingkey ${{ secrets.GPG_KEY_ID }}
           git config --global commit.gpgSign true
+          git config --global gpg.program gpg
 
       - name: Release
         uses: cycjimmy/semantic-release-action@v4
