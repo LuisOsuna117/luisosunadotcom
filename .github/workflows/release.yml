@@ -19,7 +19,7 @@ jobs:
 
       - name: Set up GPG
         run: |
-          echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --import
+          echo "${{ secrets.GPG_PRIVATE_KEY }}" | base64 --decode | gpg --import
           git config --global user.signingkey ${{ secrets.GPG_KEY_ID }}
           git config --global commit.gpgSign true
 
