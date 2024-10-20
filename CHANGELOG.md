@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.1](https://github.com/LuisOsuna117/luisosunadotcom/compare/v1.0.0...v1.0.1) (2024-10-20)
+
+
+### Bug Fixes
+
+* **release:** fix deploy didn't trigger on tag ([#12](https://github.com/LuisOsuna117/luisosunadotcom/issues/12)) ([545fe94](https://github.com/LuisOsuna117/luisosunadotcom/commit/545fe9480a0934622b0428306bdf24924807c479))
+
 ## 1.0.0 (2024-10-20)
 
 
