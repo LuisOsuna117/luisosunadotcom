@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     tags:
-      - 'v*'  # This will match any tag starting with "v" (e.g., v1.0.0)
+      - '*'
 env:
   tf_version: 1.5.6
   tg_version: 0.50.2
