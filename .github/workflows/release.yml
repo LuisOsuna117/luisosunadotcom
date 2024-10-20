@@ -17,6 +17,12 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
 
+      - name: Set up GPG
+        run: |
+          echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --import
+          git config --global user.signingkey ${{ secrets.GPG_KEY_ID }}
+          git config --global commit.gpgSign true
+
       - name: Release
         uses: cycjimmy/semantic-release-action@v4
         with:
