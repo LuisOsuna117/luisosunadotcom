@@ -1,0 +1,49 @@
+name: Deploy 
+
+on:
+  push:
+    tags:
+      - 'v*'  # This will match any tag starting with "v" (e.g., v1.0.0)
+env:
+  tf_version: 1.5.6
+  tg_version: 0.50.2
+  working_dir: terraform/live
+  TF_PLUGIN_CACHE_DIR: ${{ github.workspace }}/.terraform.d/plugin-cache
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: 'Configure AWS credentials'
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+      
+      - name: Create Terraform Plugin Cache Dir
+        run: mkdir -p .terraform.d/plugin-cache
+        
+      - name: Terraform Plugin Cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.TF_PLUGIN_CACHE_DIR }}
+          key: ${{ runner.os }}-terraform-plugin-cache-${{ hashFiles('**/.terraform.lock.hcl') }}
+  
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.5.6  # Specify your Terraform version
+          terraform_wrapper: false
+  
+      - name: Install Terragrunt
+        run: |
+          curl -L https://github.com/gruntwork-io/terragrunt/releases/download/v0.50.2/terragrunt_linux_amd64 -o /usr/local/bin/terragrunt
+          chmod +x /usr/local/bin/terragrunt
+  
+      - name: Terragrunt Plan
+        run: terragrunt run-all apply --terragrunt-non-interactive --terragrunt-working-dir ${{ env.working_dir }}
