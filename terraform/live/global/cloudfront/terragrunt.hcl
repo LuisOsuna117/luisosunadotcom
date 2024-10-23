@@ -77,5 +77,10 @@ inputs = {
     ssl_support_method  = "sni-only"
   }
 
+  geo_restriction = {
+    restriction_type = "whitelist"
+    locations        = ["US", "MX", "CA"]
+  }
+
   tags = local.tags
 }
