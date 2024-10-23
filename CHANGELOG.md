@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0](https://github.com/LuisOsuna117/luisosunadotcom/compare/v1.1.3...v1.2.0) (2024-10-23)
+
+
+### Features
+
+* **cloudfront:** Cloudfront geo restriction to US, MX and CA ([#18](https://github.com/LuisOsuna117/luisosunadotcom/issues/18)) ([2029b82](https://github.com/LuisOsuna117/luisosunadotcom/commit/2029b82f3927496076462179433141afcdb85861))
+
 ## [1.1.3](https://github.com/LuisOsuna117/luisosunadotcom/compare/v1.1.2...v1.1.3) (2024-10-20)
 
 
