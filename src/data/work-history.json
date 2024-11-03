@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "title": "AWS Cloud Engineer II @ Gearbox Entertainment",
+        "dates": "11.01.2022 - present",
+        "description": "I specialize in automating cloud infrastructure and enhancing observability using tools like Datadog. I’ve streamlined monitoring processes, optimized alerting systems, and improved overall system reliability across multi-account environments. My focus on security, automation, and performance ensures stable and scalable solutions for high-traffic applications.",
+        "image": "/images/gbx.jpg"
+    },
+    {
+        "id": 2,
+        "title": "AWS DevOps Engineer @ Grupo STI",
+        "dates": "09.01.2020 - 10.27.2022",
+        "description": "I led the migration of HCL Commerce to a distributed Kubernetes environment, optimizing the cloud infrastructure on AWS and significantly reducing operational costs. I managed DB2 database systems to enhance data storage and retrieval efficiency, achieving notable improvements in performance and query response times.",
+        "image": "/images/sti.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Software Engineer Associate @ Grupo STI",
+        "dates": "02.26.2020 - 08.31.2020",
+        "description": "I focused on HCL Commerce v7 (formerly WebSphere Commerce v7), where I contributed to the development and integration of payment methods using Java EE, JSP, and EJB. I was actively involved in creating and implementing various frontend components with jQuery, enhancing the user interface and overall functionality of the platform.",
+        "image": "/images/sti.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Software Engineer Intern @ Coppel",
+        "dates":"10.14.2019 - 12.13.2019",
+        "description": "I collaborated closely with the development team to gain an in-depth understanding of the existing application architecture, functionality, and dependencies. This knowledge enabled me to facilitate the seamless migration of legacy internal applications from Visual Basic to C#.",
+        "image": "/images/coppel.jpg"
+    }
+]

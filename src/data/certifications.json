@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "title": "AWS Certified SysOps Administrator – Associate",
+        "dates": "10.15.2024 - 10.15.2027",
+        "description": "Amazon Web Services",
+        "image": "/images/sysops.png"
+    },
+    {
+        "id": 2,
+        "title": "AWS Certified Solutions Architect – Associate",
+        "dates": "01.17.2024 - 01.17.2027",
+        "description": "Amazon Web Services",
+        "image": "/images/solutions.png"
+    },
+    {
+        "id": 3,
+        "title": "AWS Certified Cloud Practitioner",
+        "dates": "08.05.2022 - 10.15.2027",
+        "description": "Amazon Web Services",
+        "image": "/images/practitioner.png"
+    }
+]

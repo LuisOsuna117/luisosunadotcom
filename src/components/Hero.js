@@ -23,7 +23,7 @@ function Hero() {
             <img src={profile} className="w-40 rounded-full" alt="" />
             <h1 className='font-sans text-4xl mt-4'>Luis Osuna</h1>
             <h3 className='font-sans text-xl mt-1 text-center'>DevOps Engineer | Cloud Solutions Architect</h3>
-            <div className='flex flex-col sm:flex-row'>
+            <div className='flex flex-col 2xl:flex-row'>
                 <Button icon={FaLinkedin} color="azure" title="Get in touch" to="https://www.linkedin.com/in/luisosuna117" />
                 <Button icon={FaFilePdf} color="amber" title="Get my resume" to="/downloads/resume.pdf" />
             </div>
