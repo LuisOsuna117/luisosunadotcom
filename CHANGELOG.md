@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.1](https://github.com/LuisOsuna117/luisosunadotcom/compare/v1.3.0...v1.3.1) (2024-11-03)
+
+
+### Bug Fixes
+
+* **React:** importing PropTypes ([#20](https://github.com/LuisOsuna117/luisosunadotcom/issues/20)) ([d094f03](https://github.com/LuisOsuna117/luisosunadotcom/commit/d094f0351a1987ec28ee68f135af43fa6bc8a6ad))
+
 ## [1.3.0](https://github.com/LuisOsuna117/luisosunadotcom/compare/v1.2.0...v1.3.0) (2024-11-03)
 
 
