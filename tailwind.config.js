@@ -7,6 +7,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      borderWidth: {
+        '1': '1px',
+      },
+      spacing: {
+        '112':'28rem',
+        '128': '32rem',
+      },
       fontFamily: {
         'sans': ['"Amazon Ember"', ...defaultTheme.fontFamily.sans],
       },

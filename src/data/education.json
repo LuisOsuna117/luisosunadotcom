@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "title": "AWS Knowledge: Serverless",
+        "dates": "12.01.2023 - 12.17.2023",
+        "description": "Amazon Web Services",
+        "image": "/images/serverless.png"
+    },
+    {
+        "id": 2,
+        "title": "B.S. in Computer Science",
+        "dates": "01.17.2017 - 01.17.2020",
+        "description": "Universidad Politécnica De Sinaloa (UPSIN)",
+        "image": "/images/upsin.jpg"
+    }
+]
