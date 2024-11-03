@@ -12,4 +12,11 @@ function Item(props) {
     );
 }
 
+Item.propTypes = {
+    img: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    dates: PropTypes.string.isRequired,
+    desc: PropTypes.string.isRequired,
+};
+
 export default Item;

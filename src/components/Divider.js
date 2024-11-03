@@ -7,4 +7,8 @@ function Divider(props) {
     );
 }
 
+Divider.propTypes = {
+    title: PropTypes.string.isRequired
+};
+
 export default Divider;

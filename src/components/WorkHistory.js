@@ -5,7 +5,7 @@ function WorkHistory() {
     return (
         <div className="divide-y divide-black/87 flex flex-col items-center p-4">
             {WorkHistoryData.map((item) => (
-                <Item img={item.image} title={item.title} dates={item.dates} desc={item.description} />
+                <Item key={item.id} img={item.image} title={item.title} dates={item.dates} desc={item.description} />
             ))}
         </div>
     );
