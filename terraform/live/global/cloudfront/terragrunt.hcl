@@ -64,7 +64,7 @@ inputs = {
 
   default_cache_behavior = {
     target_origin_id       = "s3"
-    viewer_protocol_policy = "allow-all"
+    viewer_protocol_policy = "redirect-to-https"
     allowed_methods        = ["GET", "HEAD", "OPTIONS"]
     cached_methods         = ["GET", "HEAD"]
     compress               = true
