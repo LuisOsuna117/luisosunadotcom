@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 function Divider(props) {
     const { title } = props
     return (

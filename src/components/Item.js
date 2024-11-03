@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function Item(props) {
     const { img, title, dates, desc } = props
     return (
