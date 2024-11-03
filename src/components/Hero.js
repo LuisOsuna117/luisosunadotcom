@@ -19,7 +19,7 @@ function Hero() {
     };
   }, []);
     return (
-        <div className="h-dvh bg-amazon flex flex-col justify-center items-center text-white">
+        <div className="h-screen bg-amazon flex flex-col justify-center items-center text-white">
             <img src={profile} className="w-40 rounded-full" alt="" />
             <h1 className='font-sans text-4xl mt-4'>Luis Osuna</h1>
             <h3 className='font-sans text-xl mt-1 text-center'>DevOps Engineer | Cloud Solutions Architect</h3>
