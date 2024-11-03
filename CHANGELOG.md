@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0](https://github.com/LuisOsuna117/luisosunadotcom/compare/v1.2.0...v1.3.0) (2024-11-03)
+
+
+### Features
+
+* **Home:** Adding about me, work history, certs and  education ([#19](https://github.com/LuisOsuna117/luisosunadotcom/issues/19)) ([475e54c](https://github.com/LuisOsuna117/luisosunadotcom/commit/475e54c5ea82b2220ea34a2ec086d6d0d16b1e73))
+
 ## [1.2.0](https://github.com/LuisOsuna117/luisosunadotcom/compare/v1.1.3...v1.2.0) (2024-10-23)
 
 
