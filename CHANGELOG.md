@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.4](https://github.com/LuisOsuna117/luisosunadotcom/compare/v1.3.3...v1.3.4) (2026-03-06)
+
+
+### Bug Fixes
+
+* package.json & package-lock.json to reduce vulnerabilities ([#26](https://github.com/LuisOsuna117/luisosunadotcom/issues/26)) ([99ab27d](https://github.com/LuisOsuna117/luisosunadotcom/commit/99ab27da8c6b44e67e33397248a85ec54a34d7ed))
+
 ## [1.3.3](https://github.com/LuisOsuna117/luisosunadotcom/compare/v1.3.2...v1.3.3) (2024-11-03)
 
 
